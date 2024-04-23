@@ -1,81 +1,71 @@
-Here's a README documentation based on the provided code for setting up and running a Discord bot for ELO boosting services. This README includes instructions for initial setup, configuration, and execution.
+# ELO Boost Bot
 
----
+ELO Boost Bot is a Discord bot designed to automate order processing, payment handling, and booster assignment for a gaming ELO boosting service. This project integrates multiple APIs, including Discord, Stripe, and Google Sheets, to provide a seamless and automated service from ticket creation to order completion.
 
-## README: ELO Boosting Discord Bot
+## Features
 
-### Overview
-This Discord bot automates the ELO boosting order process, including ticket detection, order processing, payment handling via Stripe, and management of order assignments and tracking through Google Sheets. Designed primarily for gaming communities on Discord, this bot simplifies transactions and communication between customers and boosters.
+- **Automated Ticket Detection**: Detects new orders through specific Discord channels.
+- **Order Processing**: Processes user inputs and generates Stripe payment links automatically.
+- **Automatic Booster Assignment**: Assigns boosters based on predefined criteria and their availability.
+- **Google Sheets Integration**: Updates a Google Sheet in real-time with order details and status.
+- **Secure Payment Processing**: Integrates with Stripe for secure online payments.
+
+## Technology Stack
+
+- **Backend**: Python with discord.py
+- **Database**: MongoDB for storing booster profiles and order details
+- **APIs**:
+  - Discord API for bot interaction
+  - Stripe API for payment processing
+  - Google Sheets API for data logging and tracking
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-- Python 3.8 or higher
-- Discord account and a server for deployment
-- Stripe account for payment processing
-- Google account with access to Google Sheets
-- Install `nextcord`, `gspread`, `stripe`, `python-dotenv` Python libraries
 
-### Setup Instructions
+What things you need to install the software and how to install them:
 
-#### 1. Environment Setup
-Install the required Python libraries:
 ```bash
-pip install nextcord gspread stripe python-dotenv oauth2client
+python -m pip install nextcord gspread stripe python-dotenv
 ```
 
-#### 2. Configuration Files
-Create a `.env` file in your project root directory and populate it with the following variables:
-```
-STRIPE_API_KEY='your_stripe_secret_key'
-GOOGLE_SHEETS_CREDENTIALS_PATH='path_to_your_google_service_account_json'
-```
+You will also need to set up Stripe and Google Cloud service accounts and download the necessary credentials files, setting them as environment variables or directly within your configuration files.
 
-#### 3. Google Sheets API Setup
-- Create a service account in Google Cloud Platform.
-- Download the JSON key file and place it in your project directory.
-- Share your Google Sheet with the email address of your service account.
+### Installing
 
-#### 4. Discord Bot Setup
-- Create a new application in the Discord Developer Portal.
-- Add a bot to the application and copy the bot token.
-- Invite the bot to your Discord server with appropriate permissions (e.g., read messages, send messages, manage channels).
+A step-by-step series of examples that tell you how to get a development env running:
 
-#### 5. Config File (`config.json`)
-Create a `config.json` file for server-specific settings. Example structure:
-```json
-{
-    "customer_servers": {
-        "123456789012345678": {
-            "TOKEN": "Your_Discord_Bot_Token",
-            "GAME_TYPE": "Type_Of_Game",
-            "PRICE_MULTIPLIER": 1.0
-        }
-    },
-    "booster_server": {
-        "SERVER_ID": "123456789012345678",
-        "CHANNELS": {
-            "Type_Of_Game": "channel_id"
-        }
-    }
-}
-```
-Replace placeholders with actual IDs and values.
+1. Clone the repository:
+   ```bash
+   git clone https://yourrepositorylink.com
+   ```
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up environment variables for your Stripe API key and Google Sheets credentials path:
+   ```bash
+   export STRIPE_API_KEY='your_stripe_api_key_here'
+   export GOOGLE_SHEETS_CREDENTIALS_PATH='path_to_your_google_sheets_credentials.json'
+   ```
+4. Run the bot:
+   ```bash
+   python bot.py
+   ```
 
-### Running the Bot
-Execute the bot by running the script:
-```bash
-python your_script_name.py
-```
+## Configuration
 
-### Functionalities
-- **Automated Ticket Detection**: Monitors Discord channels for new ticket creation with specific prefixes.
-- **Order Processing**: Handles customer interactions within Discord for selecting ELO boosts and generates Stripe payment links.
-- **Booster Assignment**: Manages booster profiles and assigns boosters to orders automatically.
-- **Google Sheets Integration**: Updates a Google Sheet in real time with order details, payments, and assignment tracking.
+Explain how to configure the bot, including where to place and how to format the `config.json` file.
 
-### Additional Notes
-- Ensure the bot has the necessary permissions on your Discord server to read and send messages.
-- The system should be monitored for any operational issues or bugs that may affect processing or user experience.
+## Usage
 
----
+Detail how to interact with the bot, including commands and expected responses. For example:
 
-This README should provide a comprehensive guide to setting up and operating the ELO boosting Discord bot. Adjust paths, tokens, and other configurations as necessary to suit your environment and security practices.
+- `!order [current_rank] [desired_rank] [region] [streaming] [choose_agents]`: Starts the order process.
+- `!price [current_rank] [desired_rank]`: Provides a price quote for the specified ELO boost.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](LINK_TO_YOUR_CONTRIBUTING.MD) for details on our code of conduct, and the process for submitting pull requests to us.
