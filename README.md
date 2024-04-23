@@ -2,6 +2,11 @@
 
 ELO Boost Bot is a Discord bot designed to automate order processing, payment handling, and booster assignment for a gaming ELO boosting service. This project integrates multiple APIs, including Discord, Stripe, and Google Sheets, to provide a seamless and automated service from ticket creation to order completion.
 
+## Video Preview
+
+[![Video Preview](https://github.com/zima-0201/Project-Images/blob/main/video%20preview/Py-Discord-ELO-Boosting-Bot.png)](https://brand-car.s3.eu-north-1.amazonaws.com/Four+Seasons/Py-Discord-ELO-Boosting-Bot.mp4)
+
+
 ## Features
 
 - **Automated Ticket Detection**: Detects new orders through specific Discord channels.
