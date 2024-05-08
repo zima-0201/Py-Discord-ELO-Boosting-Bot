@@ -4,7 +4,7 @@ ELO Boost Bot is a Discord bot designed to automate order processing, payment ha
 
 ## Video Preview
 
-[![Video Preview](https://github.com/zima-0201/Project-Images/blob/main/video%20preview/Py-Discord-ELO-Boosting-Bot.png)](https://brand-car.s3.eu-north-1.amazonaws.com/Four+Seasons/Py-Discord-ELO-Boosting-Bot.mp4)
+[![Video Preview](https://github.com/zima-0201/Project-Images/blob/main/video%20preview/Py-Discord-ELO-Boosting-Bot.jpeg)](https://brand-car.s3.eu-north-1.amazonaws.com/Four+Seasons/Py-Discord-ELO-Boosting-Bot.mp4)
 
 
 ## Features
